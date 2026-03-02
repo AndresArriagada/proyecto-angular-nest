@@ -2,6 +2,8 @@
 
 Este proyecto es una aplicación completa de gestión de usuarios con Angular 11 en el frontend y NestJS en el backend.
 
+> **📚 ¿Vienes de Django?** Lee la [Comparativa de Stack: Django vs Angular+NestJS](COMPARATIVA_STACK.md) para entender las diferencias arquitecturales y conceptuales entre ambos stacks.
+
 ## Estructura del Proyecto
 
 ```
@@ -141,6 +143,26 @@ La aplicación permite:
 - **Services**: UsersService para comunicación con la API
 - **Models**: Interfaces TypeScript para los tipos de datos
 
+## 📚 Recursos de Aprendizaje
+
+### Documentación Oficial
+- [NestJS Documentation](https://docs.nestjs.com/) - Framework backend
+- [Angular Documentation](https://angular.io/docs) - Framework frontend
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/) - Lenguaje
+
+### Conceptos Clave
+- **Decoradores TypeScript**: `@Controller()`, `@Get()`, `@Component()`, etc.
+- **Inyección de Dependencias**: Patrón usado en ambos frameworks
+- **Observables (RxJS)**: Para manejar operaciones asincrónicas
+- **Módulos**: Organización del código en ambos frameworks
+
+### Si vienes de Django
+Lee el documento [COMPARATIVA_STACK.md](COMPARATIVA_STACK.md) que explica:
+- Diferencias arquitecturales (monolítico vs separado)
+- Equivalencias conceptuales (Views → Controllers, Templates → Components)
+- Flujo de datos en ambos stacks
+- Ventajas y desventajas de cada enfoque
+
 ## Notas
 
 - Los datos se almacenan en memoria en el backend (se pierden al reiniciar el servidor)
@@ -155,4 +177,5 @@ Posibles mejoras:
 - Agregar validaciones con class-validator
 - Implementar autenticación y autorización
 - Agregar paginación en la lista de usuarios
+- Agregar testing (Jest para backend, Jasmine/Karma para frontend)
 - Mejorar el diseño con un framework CSS (Bootstrap, Material, etc.)
