@@ -1,0 +1,120 @@
+<div class="container">
+  <h1>Gestión de Usuarios</h1>
+
+  <!-- Mensaje de feedback -->
+  <div *ngIf="message" class="message">{{ message }}</div>
+
+  <!-- Formulario para crear usuario -->
+  <div class="form-section">
+    <h2>Crear Nuevo Usuario</h2>
+    <form (ngSubmit)="createUser()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input 
+          type="text" 
+          id="nombre" 
+          [(ngModel)]="newUser.nombre" 
+          name="nombre"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="newUser.email" 
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="edad">Edad (opcional):</label>
+        <input 
+          type="number" 
+          id="edad" 
+          [(ngModel)]="newUser.edad" 
+          name="edad"
+        />
+      </div>
+
+      <button type="submit" class="btn-primary">Crear Usuario</button>
+    </form>
+  </div>
+
+  <!-- Formulario de edición (modal simple) -->
+  <div *ngIf="editingUser" class="edit-form">
+    <h2>Editar Usuario</h2>
+    <form (ngSubmit)="updateUser()">
+      <div class="form-group">
+        <label for="edit-nombre">Nombre:</label>
+        <input 
+          type="text" 
+          id="edit-nombre" 
+          [(ngModel)]="editingUser.nombre" 
+          name="nombre"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="edit-email">Email:</label>
+        <input 
+          type="email" 
+          id="edit-email" 
+          [(ngModel)]="editingUser.email" 
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="edit-edad">Edad:</label>
+        <input 
+          type="number" 
+          id="edit-edad" 
+          [(ngModel)]="editingUser.edad" 
+          name="edad"
+        />
+      </div>
+
+      <div class="button-group">
+        <button type="submit" class="btn-primary">Actualizar</button>
+        <button type="button" class="btn-secondary" (click)="cancelEdit()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Lista de usuarios -->
+  <div class="users-list">
+    <h2>Lista de Usuarios</h2>
+    <div *ngIf="users.length === 0" class="no-users">
+      No hay usuarios registrados
+    </div>
+    <table *ngIf="users.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Edad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.nombre }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.edad || 'N/A' }}</td>
+          <td>
+            <button class="btn-edit" (click)="editUser(user)">Editar</button>
+            <button class="btn-delete" (click)="deleteUser(user.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
