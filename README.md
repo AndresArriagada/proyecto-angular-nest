@@ -12,12 +12,20 @@ proyecto-angular-nest/
 
 ## Requisitos
 
-- Node.js v22.14.0 (o compatible)
-- npm 10.9.2 (o compatible)
+- Node.js v16 (recomendado para Angular 11)
+- npm
+- nvm (Node Version Manager) - opcional pero recomendado
 
 ## Instalación
 
-Las dependencias ya están instaladas. Si necesitas reinstalar:
+### Clonar el repositorio
+
+```bash
+git clone https://github.com/AndresArriagada/proyecto-angular-nest.git
+cd proyecto-angular-nest
+```
+
+### Instalar dependencias
 
 ### Backend (NestJS)
 ```bash
@@ -33,7 +41,19 @@ npm install --legacy-peer-deps
 
 ## Ejecución
 
-### 1. Iniciar el Backend
+### Opción 1: Usando los scripts de inicio (recomendado)
+
+```bash
+# Iniciar el backend (en una terminal)
+./start-backend.sh
+
+# Iniciar el frontend (en otra terminal)
+./start-frontend.sh
+```
+
+### Opción 2: Manualmente
+
+#### 1. Iniciar el Backend
 
 Abre una terminal y ejecuta:
 
@@ -44,18 +64,28 @@ npm run start
 
 El servidor estará disponible en: `http://localhost:3000`
 
-### 2. Iniciar el Frontend
+#### 2. Iniciar el Frontend
 
 Abre otra terminal y ejecuta:
 
 ```bash
 cd frontend/app
+# Si usas nvm
+nvm use 16
 npm start
 ```
 
 La aplicación estará disponible en: `http://localhost:4200`
 
-Abre tu navegador en `http://localhost:4200` para ver la aplicación.
+### Detener los servidores
+
+Para detener todos los servidores:
+
+```bash
+./stop-all.sh
+```
+
+O manualmente con `Ctrl+C` en cada terminal.
 
 ## Funcionalidades
 
