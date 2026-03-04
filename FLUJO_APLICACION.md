@@ -717,27 +717,3 @@ Component → Template → Usuario ve resultados
 ```
 
 ---
-
-## 💡 Para profundizar
-
-### Practica modificando:
-1. **Agrega un campo "teléfono"**:
-   - Backend: Agrega en entity y DTO
-   - Frontend: Agrega en model, form y tabla
-
-2. **Implementa edición**:
-   - Backend: Ya existe el método `update()`
-   - Frontend: Agrega botón editar y lógica
-
-3. **Agrega validaciones**:
-   - Backend: Usa `class-validator` en DTOs
-   - Frontend: Usa validadores de Angular
-
-### Debugging:
-- **Frontend**: F12 → Console / Network tab
-- **Backend**: Console donde corre `npm start`
-- **Peticiones HTTP**: F12 → Network → XHR
-
----
-
-¿Tienes dudas sobre algún paso específico? Este flujo es la base de todas las aplicaciones Angular + NestJS.
