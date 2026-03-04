@@ -2,14 +2,28 @@
 
 Este proyecto es una aplicación completa de gestión de usuarios con Angular 11 en el frontend y NestJS en el backend.
 
+> **🔄 ¿Nuevo en este stack?** Lee el [Flujo Completo de la Aplicación](FLUJO_APLICACION.md) para entender paso a paso cómo se comunican el frontend y backend.
+>
 > **📚 ¿Vienes de Django?** Lee la [Comparativa de Stack: Django vs Angular+NestJS](COMPARATIVA_STACK.md) para entender las diferencias arquitecturales y conceptuales entre ambos stacks.
+
+## Arquitectura
+
+```
+┌─────────────────┐         HTTP          ┌──────────────────┐
+│   FRONTEND      │ ◄──────────────────► │    BACKEND       │
+│   Angular 11    │   JSON (REST API)    │    NestJS        │
+│   Puerto 4200   │                      │    Puerto 3000   │
+└─────────────────┘                      └──────────────────┘
+```
 
 ## Estructura del Proyecto
 
 ```
 proyecto-angular-nest/
 ├── backend/          # API REST con NestJS
+│   └── src/users/   # Módulo CRUD de usuarios
 └── frontend/app/     # Aplicación Angular 11
+    └── src/app/users/ # Componentes y servicios de usuarios
 ```
 
 ## Requisitos
